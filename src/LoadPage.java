@@ -20,8 +20,10 @@ public class LoadPage {
         System.out.println("Digite a sua URL:\n");
         Scanner ler = new Scanner(System.in);
         String url_lida = ler.nextLine();
+        System.out.println("Digite a porta:\n");
+        int porta = ler.nextInt();
         try {
-            URL url = new URL(url_lida);
+            URL url = new URL(url_lida +":"+porta);
             new LoadPage().getPage(url);
         } catch (Exception e) {
             e.printStackTrace();
